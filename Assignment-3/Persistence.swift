@@ -51,6 +51,12 @@ struct PersistenceController {
                  */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
+            // PRINT THE DATABASE PATH
+                  #if DEBUG
+                    if let url = storeDescription.url {
+                      print("Core Data DB Path: \(url.path)")
+                    }
+                  #endif
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
