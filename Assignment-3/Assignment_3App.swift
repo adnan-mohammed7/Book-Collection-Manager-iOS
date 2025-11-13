@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import CoreData
+internal import CoreData
 
 @main
 struct Assignment_3App: App {
@@ -14,7 +14,7 @@ struct Assignment_3App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BookListView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

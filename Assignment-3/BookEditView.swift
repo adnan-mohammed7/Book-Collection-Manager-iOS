@@ -28,9 +28,9 @@ struct BookEditView: View {
     
     init(book: Book?){
         self.book = book
-        self.title = book?.title ?? "Unknown"
-        self.author = book?.author ?? "Unknown"
-        self.publisher = book?.publisher ?? "Unknown"
+        self.title = book?.title ?? ""
+        self.author = book?.author ?? ""
+        self.publisher = book?.publisher ?? ""
         if let statusString = book?.status, let statusEnum = BookStatus(rawValue: statusString) {
             self.status = statusEnum
         } else {
@@ -40,10 +40,10 @@ struct BookEditView: View {
     }
     
     private var canSave: Bool{
-        !title.isEmpty && !author.isEmpty && publisher.isEmpty
+        !title.isEmpty && !author.isEmpty && !publisher.isEmpty
     }
     var body: some View {
-        NavigationStack{
+        VStack{
             Form{
                 TextField("Title", text: $title)
                 TextField("Author", text: $author)

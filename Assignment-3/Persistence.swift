@@ -5,7 +5,7 @@
 //  Created by user278021 on 11/11/25.
 //
 
-import CoreData
+internal import CoreData
 
 struct PersistenceController {
     static let shared = PersistenceController()
@@ -51,12 +51,6 @@ struct PersistenceController {
                  */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-            // PRINT THE DATABASE PATH
-                  #if DEBUG
-                    if let url = storeDescription.url {
-                      print("Core Data DB Path: \(url.path)")
-                    }
-                  #endif
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
