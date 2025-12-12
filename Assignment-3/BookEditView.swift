@@ -62,9 +62,9 @@ struct BookEditView: View {
                     Button(book == nil ? "Save" : "Update"){
                         saveBook()
                     }
-                    .disabled(!canSave)
                     .background(.blue)
                     .foregroundStyle(.white)
+                    .disabled(!canSave)
                 }
             }
         }
